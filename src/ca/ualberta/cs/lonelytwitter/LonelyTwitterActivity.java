@@ -48,7 +48,20 @@ public class LonelyTwitterActivity extends Activity {
 
 	@Override
 	protected void onStart() {
-		// TODO Auto-generated method stub
+		
+		//works since an author is a user
+		User u = new Author("joe");
+		try {
+			u.setName("joe2");
+		}
+		// handle different types of Exceptions separately, don't just use catch (Exception e)
+		catch (IOException e){
+			// some code that tells the user to use a shorter name
+		}
+		
+		ArrayList<User> users = new ArrayList<User>();
+		users.add(u);
+		
 		super.onStart();
 		String[] tweets = loadFromFile();
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
