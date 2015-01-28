@@ -36,8 +36,10 @@ public abstract class LonelyTweetModel {
 		if (other == null || !(other instanceof LonelyTweetModel)) {
 			return false;
 		}
-		
 		LonelyTweetModel otherTweet = (LonelyTweetModel) other;
+		if (otherTweet.getClass() != this.getClass()){
+			return false;
+		}
 		return timestamp.equals(otherTweet.timestamp) && text.equals(otherTweet.text);
 	}
 }

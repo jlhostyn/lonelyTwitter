@@ -1,6 +1,8 @@
 package ca.ualberta.cs.lonelytwitter.test;
-
+import java.util.Date;
+import ca.ualberta.cs.lonelytwitter.ImportantTweetModel;
 import ca.ualberta.cs.lonelytwitter.LonelyTwitterActivity;
+import ca.ualberta.cs.lonelytwitter.NormalTweetModel;
 import android.test.ActivityInstrumentationTestCase2;
 
 public class LonelyTweetModelTest extends
@@ -29,11 +31,17 @@ public class LonelyTweetModelTest extends
 	}
 
 	private boolean isGreaterEqual(int i, int j) {
-		
-
 		if(i>=j)
 			return true;
 		return false;
+	}
+	
+	public void testEqual() {
+		NormalTweetModel tweet1 = new NormalTweetModel("Hi", new Date());
+		ImportantTweetModel tweet2 = new ImportantTweetModel("Hi");
+		NormalTweetModel tweet3 = new NormalTweetModel("Hi", new Date());
+		
+		assertFalse(tweet2.equals(tweet1));
 	}
 
 }
