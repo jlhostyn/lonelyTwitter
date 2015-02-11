@@ -2,6 +2,7 @@ package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
 
+//abstract so one of its subclasses have to be instantiated
 public abstract class LonelyTweetModel {
 	private String text;
 	protected Date timestamp;
